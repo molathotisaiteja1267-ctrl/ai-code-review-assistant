@@ -78,7 +78,7 @@ It detects bugs, security vulnerabilities, performance issues, code-quality prob
 
 ### 4. Tech Stack
 
-```markdown
+
 ## Tech Stack
 
 - **Frontend:** React, TypeScript
@@ -87,8 +87,8 @@ It detects bugs, security vulnerabilities, performance issues, code-quality prob
 - **Analysis:** AST, static analysis, security scanning
 - **Database:** SQLite / PostgreSQL
 - **Tools:** Docker, GitHub
-```
 
+  
 ## 📊 Benchmark
 
 The current local benchmark compares three analysis approaches:
