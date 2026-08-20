@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-bg text-text-primary font-sans antialiased selection:bg-brand-100 selection:text-brand-900;
+  }
+}
+
+/* Professional clean scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fbf5ee;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6ccc2;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8aba0;
+}
+
+/* Monaco Light Editor Custom Line Highlights */
+.monaco-critical-line {
+  background-color: rgba(229, 57, 53, 0.08) !important;
+  border-left: 3px solid #e53935 !important;
+}
+.monaco-high-line {
+  background-color: rgba(244, 81, 30, 0.08) !important;
+  border-left: 3px solid #f4511e !important;
+}
+.monaco-medium-line {
+  background-color: rgba(255, 193, 7, 0.12) !important;
+  border-left: 3px solid #ffc107 !important;
+}
+.monaco-low-line {
+  background-color: rgba(25, 118, 210, 0.08) !important;
+  border-left: 3px solid #1976d2 !important;
+}

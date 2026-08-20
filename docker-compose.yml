@@ -1,0 +1,22 @@
+﻿services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - 8000:8000
+    environment:
+      - DATABASE_URL=sqlite:///./code_review.db
+      - LLM_PROVIDER=smart_fallback
+      - SECRET_KEY=production-secret-key-change-me-12345
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
