@@ -1,63 +1,57 @@
+CodeReviewAI
+AI-Powered Code Quality & Security Platform
 
+CodeReviewAI is a developer tool that combines AST analysis, static analysis, security scanning, project-aware context, and AI reasoning to review source code and GitHub Pull Requests.
 
-# CodeReviewAI
+It detects bugs, security vulnerabilities, performance issues, code-quality problems, and project-specific rule violations, while also generating and validating fixes.
 
-### AI-Powered Code Quality & Security Platform
+Features
+Hybrid Code Review — Combines static analysis with AI reasoning for deeper code reviews.
+AST Taint Tracking — Detects unsafe data flows such as dynamically constructed SQL queries.
+Security Analysis — Identifies SQL injection, command injection, hardcoded secrets, insecure deserialization, and other security risks.
+Multi-Signal Detection — Combines findings from multiple analysis methods and reduces duplicate issues.
+AI Fix Generation — Generates suggested fixes with clear explanations.
+Fix Validation — Re-checks generated fixes for syntax and security issues.
+Project-Aware Review — Uses project documentation and coding guidelines during analysis.
+GitHub PR Review — Reviews Pull Request changes and highlights issues in modified code.
+Interactive Code Editor — Provides line-level issue highlighting and code comparison.
+Review History & Dashboard — Tracks reviews, findings, risks, and quality scores.
+Benchmarking — Compares different review approaches using a test dataset.
+How It Works
 
-CodeReviewAI is a developer-focused platform that combines **AST analysis, static analysis, security scanning, project-aware RAG, and LLM reasoning** to review source code and GitHub Pull Requests.
-
-It identifies security vulnerabilities, bugs, performance issues, code-quality problems, and project-specific coding violations, while also generating and validating suggested fixes.
-
-## ✨ Features
-
-- **Hybrid Code Review** — Combines AST, Ruff, Bandit, security scanning, complexity analysis, and AI reasoning.
-- **AST Taint Tracking** — Detects unsafe data flows such as dynamically constructed SQL queries.
-- **Security Analysis** — Detects SQL injection, command injection, hardcoded secrets, insecure deserialization, and other risky patterns.
-- **Multi-Signal Evidence Fusion** — Combines findings from multiple analyzers and removes duplicate issues.
-- **AI Fix Generation** — Generates suggested fixes with explanations.
-- **Automated Fix Validation** — Re-analyzes generated fixes for syntax, security, and regressions.
-- **Project-Aware RAG** — Uses project documentation and coding guidelines during reviews.
-- **GitHub PR Review** — Analyzes changed files and diff hunks from Pull Requests.
-- **Monaco Editor** — Provides line-level findings, code navigation, and side-by-side diffs.
-- **Review History & Dashboard** — Tracks reviews, findings, quality scores, and risks.
-- **Evaluation & Benchmarking** — Compares Static, LLM, and Hybrid analysis approaches.
-
-## 🧠 How It Works
-
-```text
-Source Code / GitHub Pull Request
-              ↓
-        AST Analysis
-              ↓
-   Static & Security Scanning
-              ↓
-        Project RAG
-              ↓
-        LLM Analysis
-              ↓
-     Evidence Aggregation
-              ↓
-     Risk & Quality Scoring
-              ↓
-        Review Results
-              ↓
-       AI Fix Generation
-              ↓
-        Fix Validation
-````
+Source Code / GitHub PR
+↓
+Code Analysis
+↓
+Security & Quality Checks
+↓
+Project Context
+↓
+AI Review
+↓
+Issue Detection & Scoring
+↓
+Review Results
+↓
+AI Fix Generation
+↓
+Fix Validation
 
 ## 🛠️ Tech Stack
 
-| Layer         | Technologies                                 |
-| ------------- | -------------------------------------------- |
-| Frontend      | React, TypeScript, Vite, Tailwind CSS        |
-| Code Editor   | Monaco Editor                                |
-| Backend       | Python, FastAPI, Pydantic, SQLAlchemy        |
-| Analysis      | Python AST, Ruff, Bandit, Radon              |
-| AI            | LLM provider abstraction, RAG                |
-| Database      | SQLite / PostgreSQL-compatible configuration |
-| Visualization | Recharts                                     |
-| DevOps        | Docker, Docker Compose, GitHub               |
+Tech Stack
+
+Frontend: React, TypeScript
+
+Backend: Python, FastAPI
+
+AI: LLMs and RAG
+
+Analysis: AST, static analysis, security scanning
+
+Database: SQLite / PostgreSQL
+
+Tools: Docker, GitHub
 
 ## 📊 Benchmark
 
@@ -241,16 +235,3 @@ Interested in **Software Engineering, AI/ML, LLM Applications, and Developer Too
 
 ---
 
-### Important
-
-Inside the README, **code snippets like the `text` architecture diagram above should have triple backticks**, but the **entire README must not be wrapped in triple backticks**.
-
-After saving the file, commit the formatting fix:
-
-```powershell
-git add README.md
-git commit -m "Improve README documentation and formatting"
-git push
-```
-
-Then refresh GitHub. It should render with proper **headings, bullets, tables, code blocks, and sections**, instead of the black code-editor appearance in your screenshot.
