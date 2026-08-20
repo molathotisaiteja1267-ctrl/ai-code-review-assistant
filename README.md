@@ -72,7 +72,7 @@ It detects bugs, security vulnerabilities, performance issues, code-quality prob
 │       Fix Validation         │
 │  Syntax • Security • Checks  │
 └──────────────────────────────┘
-                                 
+ ```                                
 
 
 
@@ -87,6 +87,7 @@ It detects bugs, security vulnerabilities, performance issues, code-quality prob
 - **Analysis:** AST, static analysis, security scanning
 - **Database:** SQLite / PostgreSQL
 - **Tools:** Docker, GitHub
+```
 
 ## 📊 Benchmark
 
