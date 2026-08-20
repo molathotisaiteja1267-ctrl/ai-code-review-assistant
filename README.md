@@ -1,84 +1,188 @@
-# CodeReviewAI — AI-Powered Code Quality & Security Platform
+Got it — you want a **shorter, cleaner, professional README**, not a huge documentation file.
 
-[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![Monaco Editor](https://img.shields.io/badge/Monaco_Editor-Light_IDE-FF6A00?style=for-the-badge)](https://microsoft.github.io/monaco-editor/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+Replace your current README with this:
 
-A professional developer platform that analyzes source code and GitHub Pull Requests using **Abstract Syntax Tree (AST) parsing with taint tracking, deterministic static analysis (Ruff, Radon), security scanning (Bandit, regex entropy), vector RAG project guidelines retrieval, LLM contextual reasoning, multi-signal issue deduplication, and automated fix safety validation**.
+````markdown
+# CodeReviewAI
 
-Designed with a **clean, light, professional UI** (warm orange/yellow/red palette, Monaco editor with inline line markers, side-by-side diff viewers, and responsive telemetry).
+### AI-Powered Code Quality & Security Platform
 
----
+CodeReviewAI is a developer tool that combines **AST analysis, static analysis, security scanning, RAG-based project context, and LLM reasoning** to review source code and GitHub Pull Requests.
 
-## 🌟 Key Engineering Features
+It detects bugs, security vulnerabilities, performance issues, code-quality problems, and project-specific rule violations, while also generating and validating fixes.
 
-- **Multi-Tier Hybrid Analysis Pipeline**: Fuses deterministic static analysis with AI reasoning to achieve zero hallucinated syntax rules and higher vulnerability recall.
-- **AST Taint Tracking**: Deep AST inspection that tracks dynamic SQL string formatting across variable assignments, detecting SQL Injection before execution.
-- **Multi-Signal Deduplicator & Evidence Combiner**: Merges overlapping findings from Bandit, AST, Ruff, and LLM into unified issues tagged with compound evidence (`["Bandit (B608)", "AST Taint Tracker", "LLM Contextual Engine"]`).
-- **Automated Fix Generation & Safety Validation Loop**: Generates side-by-side patches and **automatically re-runs AST parsing, syntax validation, and security regression checks** on the patched code buffer to verify that the vulnerability is eradicated and no new bugs are introduced.
-- **Project-Aware RAG Engine**: In-memory vector store with TF-IDF cosine similarity that retrieves project-specific guidelines (e.g., architectural repository patterns, RBAC policies) during review.
-- **GitHub Pull Request Review**: Connects repositories, inspects changed file hunks, and displays PR-style line comments.
-- **Monaco Editor Integration**: Full IDE experience with line markers, error glyphs, hover tooltips, and click-to-jump line navigation.
-- **Comprehensive Benchmark Suite**: Ground-truth dataset measuring Precision, Recall, F1 Score, and Latency across Static Only vs LLM Only vs Hybrid Engine.
-- **Executive Report Exporter**: One-click export of structured Markdown reports with scorecards, risk tiers, and fix snippets.
+## Features
 
----
+- **Hybrid Code Review** — Combines AST, Ruff, Bandit, security scanning, complexity analysis, and AI reasoning.
+- **AST Taint Tracking** — Detects issues such as dynamically constructed SQL injection flows.
+- **Security Analysis** — Detects SQL injection, command injection, hardcoded secrets, insecure deserialization, and other unsafe patterns.
+- **Multi-Signal Detection** — Combines findings from multiple analyzers and removes duplicate issues.
+- **AI Fix Generation** — Generates suggested code fixes with explanations.
+- **Fix Validation** — Re-runs syntax and security analysis to verify generated fixes.
+- **Project-Aware RAG** — Uses project documentation and coding guidelines during reviews.
+- **GitHub PR Review** — Analyzes Pull Request diffs and changed code.
+- **Monaco Editor** — Line-level issue markers, navigation, and side-by-side diff view.
+- **Review History & Dashboard** — Track reviews, risks, scores, and findings.
+- **Benchmarking** — Compare Static, LLM, and Hybrid review approaches.
 
-## 📊 Benchmark Evaluation Results
+## How It Works
 
-| Pipeline Mode | Precision | Recall | F1 Score | Accuracy | Avg Latency |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Hybrid Engine (AST + Static + Security + Aggregator)** | **100.0%** | **100.0%** | **100.0%** | **100.0%** | ~300ms |
-| **Static Only (Bandit + Ruff)** | 100.0% | 71.4% | 83.3% | 80.0% | ~715ms |
-| **LLM Reasoning Only** | 100.0% | 71.4% | 83.3% | 80.0% | ~0.5ms |
+```text
+Source Code / GitHub PR
+          ↓
+     AST Analysis
+          ↓
+ Static & Security Scanning
+          ↓
+     Project RAG
+          ↓
+     LLM Analysis
+          ↓
+  Evidence Aggregation
+          ↓
+  Risk & Quality Scoring
+          ↓
+     Review Results
+          ↓
+    AI Fix Generation
+          ↓
+      Fix Validation
+````
 
----
+## Tech Stack
 
-## 🚀 Quickstart & Local Setup
+**Frontend:** React, TypeScript, Vite, Tailwind CSS, Monaco Editor, Recharts
 
-### 1. 1-Click Launch (Windows)
-Double-click or run:
-```cmd
-.\start-dev.bat
-```
+**Backend:** Python, FastAPI, Pydantic, SQLAlchemy
 
-### 2. Manual Setup
+**AI/Analysis:** AST, Ruff, Bandit, Radon, RAG, LLM providers
 
-**Backend:**
+**Database:** SQLite for local development, PostgreSQL-compatible configuration for deployment
+
+**DevOps:** Docker, Docker Compose, GitHub
+
+## Benchmark
+
+The current local benchmark compares three approaches:
+
+| Mode          | Precision | Recall |    F1 |
+| ------------- | --------: | -----: | ----: |
+| Hybrid Engine |      100% |   100% |  100% |
+| Static Only   |      100% |  71.4% | 83.3% |
+| LLM Only      |      100% |  71.4% | 83.3% |
+
+> Results are based on the project's current local benchmark dataset.
+
+## Run Locally
+
+### Backend
+
 ```bash
 cd backend
 python -m venv venv
+```
+
+Windows:
+
+```powershell
 .\venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
+Start the API:
+
+```bash
 uvicorn app.main:app --reload --port 8000
 ```
-- API Docs: `http://localhost:8000/docs`
 
-**Frontend:**
+API docs:
+
+`http://localhost:8000/docs`
+
+### Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-- Web Application: `http://localhost:5173`
 
-### 3. Docker Compose
+Application:
+
+`http://localhost:5173`
+
+### Docker
+
 ```bash
 docker compose up --build
 ```
-- Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:8000`
 
----
+## Configuration
 
-## 🧪 Running the Test Suite
+Copy `.env.example` and configure the required variables such as:
+
+```text
+DATABASE_URL=
+SECRET_KEY=
+LLM_PROVIDER=
+OPENAI_API_KEY=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+```
+
+Never commit real API keys or secrets.
+
+## Testing
 
 ```bash
 cd backend
-.\venv\Scripts\activate
 pytest tests/ -v
 ```
-All 13 unit and integration tests pass with 100% success rate.
+
+The project includes tests for:
+
+* AST analysis
+* security scanning
+* issue aggregation
+* risk scoring
+* fix validation
+* API endpoints
+
+## Project Structure
+
+```text
+ai-code-review-assistant/
+├── backend/
+├── frontend/
+├── docker/
+├── docs/
+├── docker-compose.yml
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+## Future Improvements
+
+* Multi-language deterministic analysis
+* Dense embedding-based RAG
+* Distributed background workers
+* GitHub App/webhook automation
+* Advanced production observability
+
+## Author
+
+**Sai Teja**
+IIT (BHU) Varanasi
+
+Interested in Software Engineering, AI/ML, LLM Applications, and Developer Tools.
+
+```
+
+This is a better length for GitHub: **enough technical depth to impress recruiters without becoming documentation-heavy**.
+```
