@@ -1,57 +1,92 @@
-CodeReviewAI
-AI-Powered Code Quality & Security Platform
+# CodeReviewAI
 
-CodeReviewAI is a developer tool that combines AST analysis, static analysis, security scanning, project-aware context, and AI reasoning to review source code and GitHub Pull Requests.
+### AI-Powered Code Quality & Security Platform
+
+CodeReviewAI is a developer tool that combines **AST analysis, static analysis, security scanning, project-aware context, and AI reasoning** to review source code and GitHub Pull Requests.
 
 It detects bugs, security vulnerabilities, performance issues, code-quality problems, and project-specific rule violations, while also generating and validating fixes.
 
-Features
-Hybrid Code Review — Combines static analysis with AI reasoning for deeper code reviews.
-AST Taint Tracking — Detects unsafe data flows such as dynamically constructed SQL queries.
-Security Analysis — Identifies SQL injection, command injection, hardcoded secrets, insecure deserialization, and other security risks.
-Multi-Signal Detection — Combines findings from multiple analysis methods and reduces duplicate issues.
-AI Fix Generation — Generates suggested fixes with clear explanations.
-Fix Validation — Re-checks generated fixes for syntax and security issues.
-Project-Aware Review — Uses project documentation and coding guidelines during analysis.
-GitHub PR Review — Reviews Pull Request changes and highlights issues in modified code.
-Interactive Code Editor — Provides line-level issue highlighting and code comparison.
-Review History & Dashboard — Tracks reviews, findings, risks, and quality scores.
-Benchmarking — Compares different review approaches using a test dataset.
-How It Works
+## Features
 
-Source Code / GitHub PR
-↓
-Code Analysis
-↓
-Security & Quality Checks
-↓
-Project Context
-↓
-AI Review
-↓
-Issue Detection & Scoring
-↓
-Review Results
-↓
-AI Fix Generation
-↓
-Fix Validation
+- **Hybrid Code Review** — Combines static analysis with AI reasoning for deeper code reviews.
+- **AST Taint Tracking** — Detects unsafe data flows such as dynamically constructed SQL queries.
+- **Security Analysis** — Identifies SQL injection, command injection, hardcoded secrets, insecure deserialization, and other security risks.
+- **Multi-Signal Detection** — Combines findings from multiple analysis methods and reduces duplicate issues.
+- **AI Fix Generation** — Generates suggested fixes with clear explanations.
+- **Fix Validation** — Re-checks generated fixes for syntax and security issues.
+- **Project-Aware Review** — Uses project documentation and coding guidelines during analysis.
+- **GitHub PR Review** — Reviews Pull Request changes and highlights issues in modified code.
+- **Interactive Code Editor** — Provides line-level issue highlighting and code comparison.
+- **Review History & Dashboard** — Tracks reviews, findings, risks, and quality scores.
+- **Benchmarking** — Compares different review approaches using a test dataset.
 
-## 🛠️ Tech Stack
+  
+## How It Works
 
-Tech Stack
+```text
+┌──────────────────────────────┐
+│   Source Code / GitHub PR    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        Code Analysis         │
+│    AST + Static Analysis     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│   Security & Quality Checks  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Project Context        │
+│          RAG / Rules         │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│          AI Review           │
+│      Contextual Reasoning    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│   Issue Detection & Scoring  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Review Results         │
+│   Bugs • Security • Quality  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│      AI Fix Generation       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Fix Validation         │
+│  Syntax • Security • Checks  │
+└──────────────────────────────┘
+                                 
 
-Frontend: React, TypeScript
 
-Backend: Python, FastAPI
 
-AI: LLMs and RAG
+### 4. Tech Stack
 
-Analysis: AST, static analysis, security scanning
+```markdown
+## Tech Stack
 
-Database: SQLite / PostgreSQL
-
-Tools: Docker, GitHub
+- **Frontend:** React, TypeScript
+- **Backend:** Python, FastAPI
+- **AI:** LLMs, RAG
+- **Analysis:** AST, static analysis, security scanning
+- **Database:** SQLite / PostgreSQL
+- **Tools:** Docker, GitHub
 
 ## 📊 Benchmark
 
