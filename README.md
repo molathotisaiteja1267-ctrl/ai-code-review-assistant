@@ -76,10 +76,10 @@ It detects bugs, security vulnerabilities, performance issues, code-quality prob
 
 
 
-### 4. Tech Stack
 
 
-## Tech Stack
+
+## 4.Tech Stack
 
 - **Frontend:** React, TypeScript
 - **Backend:** Python, FastAPI
